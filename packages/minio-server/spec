@@ -1,0 +1,8 @@
+---
+name: minio-server
+
+dependencies:
+- golang1.6
+
+files:
+- minio/**/*
