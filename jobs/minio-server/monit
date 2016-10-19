@@ -1,0 +1,5 @@
+check process monit-server
+  with pidfile /var/vcap/sys/run/monit-server/pid
+  start program "/var/vcap/jobs/monit-server/bin/ctl start"
+  stop program "/var/vcap/jobs/monit-server/bin/ctl stop"
+  group vcap

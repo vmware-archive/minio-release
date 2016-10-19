@@ -1,0 +1,6 @@
+---
+name: minio-server
+templates:
+  ctl.erb: bin/ctl
+
+packages:
