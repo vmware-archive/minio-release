@@ -1,1 +1,5 @@
---- {}
+---
+minio-server/minio:
+  object_id: 2085b0ab-5605-4045-a128-2e4e933e6e16
+  sha: 9612e8be696c3c81bacecd9b8bc6c0339e59063b
+  size: 18539402

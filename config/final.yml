@@ -3,4 +3,4 @@ final_name: minio
 blobstore:
   provider: s3
   options:
-    bucket_name: cf-release-blobs
+    bucket_name: minio-release-blobs
