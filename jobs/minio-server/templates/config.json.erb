@@ -1,0 +1,56 @@
+{
+	"version": "7",
+	"credential": {
+		"accessKey": "<%= p("credential.accesskey") %>",
+		"secretKey": "<%= p("credential.secretkey") %>"
+	},
+	"region": "<%= p("region") %>",
+	"logger": {
+		"console": {
+			"enable": false,
+			"level": "fatal"
+		},
+		"file": {
+			"enable": true,
+			"fileName": "/var/vcap/sys/log/minio-server/minio-server.log",
+			"level": "error"
+		},
+		"syslog": {
+			"enable": false,
+			"address": "",
+			"level": "debug"
+		}
+	},
+	"notify": {
+		"amqp": {
+			"1": {
+				"enable": false,
+				"url": "",
+				"exchange": "",
+				"routingKey": "",
+				"exchangeType": "",
+				"mandatory": false,
+				"immediate": false,
+				"durable": false,
+				"internal": false,
+				"noWait": false,
+				"autoDeleted": false
+			}
+		},
+		"elasticsearch": {
+			"1": {
+				"enable": false,
+				"url": "",
+				"index": ""
+			}
+		},
+		"redis": {
+			"1": {
+				"enable": false,
+				"address": "",
+				"password": "",
+				"key": ""
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+---
+name: minio
+director_uuid: fb70f16a-4d6f-41f8-bc2e-0181a03dff18 
+
+releases:
+- name: minio
+  version: latest
+
+stemcells:
+- alias: bosh-warden-boshlite-ubuntu-trusty-go_agent
+  os: ubuntu-trusty
+  version: latest
+
+instance_groups:
+- name: minio-server
+  azs: [z1]
+  instances: 1
+  lifecycle: service
+  jobs:
+  - name: minio-server
+    release: minio
+    consumes: {}
+    provides: {}
+    properties:
+      credential:
+        accesskey: GESNKCXX4LMNRYBI1YR0
+        secretkey: U43jymLJ+1ZwzHj1vEILHcHjsSWxWThtxVD3CBxj
+      region: us-east-1
+  vm_type: default
+  stemcell: bosh-warden-boshlite-ubuntu-trusty-go_agent
+  persistent_disk_type: default
+  networks:
+  - name: default
+    static_ips:
+    - 10.244.0.2
+
+update:
+  canaries: 1
+  canary_watch_time: 60000
+  update_watch_time: 60000
+  max_in_flight: 2

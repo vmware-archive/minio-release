@@ -2,6 +2,18 @@
 name: minio-server
 templates:
   ctl.erb: bin/ctl
+  config.json.erb: config/config.json
 
 packages:
 - minio-server
+
+properties:
+  credential.accesskey:
+    description: "The access key the server should accept"
+    default: ~
+  credential.secretkey:
+    description: "The secret key the server should accept"
+    default: ~
+  region:
+    description: "The region the server should claim to be part of.  Defaults to us-east-1."
+    default: us-east-1

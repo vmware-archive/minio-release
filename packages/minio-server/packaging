@@ -1,14 +1,4 @@
 set -e -x
 
-export GOROOT=$(readlink -nf /var/vcap/packages/golang1.7)
-export PATH=$GOROOT/bin:$PATH
-
-mkdir -p ${BOSH_INSTALL_TARGET}/src
-
-cp -a ./minio-server/src/* ${BOSH_INSTALL_TARGET}/src
-
-export GOPATH=${BOSH_INSTALL_TARGET}
-
-cd ${BOSH_INSTALL_TARGET}/src/github.com/minio
-
-make
+cp -a minio-server/minio ${BOSH_INSTALL_TARGET}
+chmod +x ${BOSH_INSTALL_TARGET}/minio
